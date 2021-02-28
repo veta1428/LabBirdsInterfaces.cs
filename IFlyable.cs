@@ -8,6 +8,6 @@ namespace birds
 {
     interface IFlyable
     {
-        bool IsAbleToFly();
+        void Fly();
     }
 }

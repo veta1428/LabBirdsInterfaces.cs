@@ -8,6 +8,6 @@ namespace birds
 {
     interface ISwimable
     {
-        bool IsAbleToSwim();
+        void Swim();
     }
 }

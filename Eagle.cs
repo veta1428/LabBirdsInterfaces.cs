@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace birds
 {
-    internal sealed class Eagle : Birds
+    internal sealed class Eagle : Birds, IFlyable
     {
         public LOVE Relationships()
         {
@@ -23,19 +23,14 @@ namespace birds
             Age = age;
         }
 
-        public sealed override bool IsAbleToFly() //has it any sense to mark this method as sealed?
-        {
-            return true;
-        }
-
-        public sealed override bool IsAbleToSwim()
-        {
-            return false;
-        }
-
         protected sealed override int MaxLifespan()
         {
             return 65;
+        }
+
+        public void Fly()
+        {
+            Console.WriteLine("i am flying");
         }
     }
 }

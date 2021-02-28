@@ -11,12 +11,17 @@ namespace birds
         POLY, MONO
     }
 
-    internal sealed class Penguin : Birds
+    internal sealed class Penguin : Birds, ISwimable
     {
 
         public LOVE Relationships()
         {
             return LOVE.MONO;
+        }
+
+        public void Swim()
+        {
+            Console.WriteLine("i am swiming");
         }
 
         public Penguin()
@@ -27,16 +32,6 @@ namespace birds
         public Penguin(int age = 0)
         {
             Age = age;
-        }
-
-        public override bool IsAbleToFly()
-        {
-            return false; 
-        }
-
-        public override bool IsAbleToSwim()
-        {
-            return true;
         }
 
         protected sealed override int MaxLifespan()

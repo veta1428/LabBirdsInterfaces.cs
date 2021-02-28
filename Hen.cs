@@ -23,16 +23,6 @@ namespace birds
             Age = 0;
         }
 
-        public sealed override bool IsAbleToFly()
-        {
-            return false;
-        }
-
-        public sealed override bool IsAbleToSwim()
-        {
-            return false;
-        }
-
         protected sealed override int MaxLifespan()
         {
             return 18;

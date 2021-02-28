@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace birds
 {
-    internal sealed class Duck : Birds
+    internal sealed class Duck : Birds, IFlyable, ISwimable
     {
         public LOVE Relationships()
         {
@@ -22,20 +22,20 @@ namespace birds
         {
             Age = 0;
         }
-        
-        public sealed override bool IsAbleToFly()
-        {
-            return true;
-        }
-
-        public sealed override bool IsAbleToSwim()
-        {
-            return true;
-        }
 
         protected sealed override int MaxLifespan()
         {
             return 20;
+        }
+
+        public void Fly()
+        {
+            Console.WriteLine("i am flying");
+        }
+
+        public void Swim()
+        {
+            Console.WriteLine("i am swiming");
         }
     }
 }
