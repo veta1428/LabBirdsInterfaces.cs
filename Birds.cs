@@ -6,13 +6,19 @@ using System.Threading.Tasks;
 
 namespace birds
 {
+    internal enum LOVE
+    {
+        POLY, MONO
+    }
+
     internal abstract class Birds 
     {
         protected abstract int MaxLifespan();
         protected bool isAlive = true;
-        internal bool IsAlive { get => isAlive; private set { } }
-        
-        internal void Kill()
+        public bool IsAlive { get => isAlive; private set { } }
+
+        public abstract LOVE Relationship();
+        public void Kill()
         {
             if (isAlive == true)
             {
@@ -22,9 +28,14 @@ namespace birds
             {
                 throw new Exception("already dead");
             }
-        } 
-        
-        internal void CelebrateBirthday()
+        }
+
+        public Birds(int age = 0)
+        {
+            Age = age;
+        }
+
+        public void CelebrateBirthday()
         {
             if (isAlive == false)
             {
@@ -40,7 +51,7 @@ namespace birds
             }
         }
         protected int age;
-        internal int Age
+        public int Age
         {
             get
             {

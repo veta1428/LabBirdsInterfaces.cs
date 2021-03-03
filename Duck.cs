@@ -8,19 +8,14 @@ namespace birds
 {
     internal sealed class Duck : Birds, IFlyable, ISwimable
     {
-        public LOVE Relationships()
+        public override sealed LOVE Relationship()
         {
             return LOVE.POLY;
         }
 
-        public Duck(int age = 0)
+        public Duck(int age = 0): base(age)
         {
-            Age = age;
-        }
 
-        public Duck()
-        {
-            Age = 0;
         }
 
         protected sealed override int MaxLifespan()

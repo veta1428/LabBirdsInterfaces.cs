@@ -6,15 +6,10 @@ using System.Threading.Tasks;
 
 namespace birds
 {
-    internal enum LOVE
-    {
-        POLY, MONO
-    }
-
     internal sealed class Penguin : Birds, ISwimable
     {
 
-        public LOVE Relationships()
+        public override sealed LOVE Relationship()
         {
             return LOVE.MONO;
         }
@@ -24,14 +19,9 @@ namespace birds
             Console.WriteLine("i am swiming");
         }
 
-        public Penguin()
+        public Penguin(int age = 0) : base(age)
         {
-            Age = 0;
-        }
-
-        public Penguin(int age = 0)
-        {
-            Age = age;
+            
         }
 
         protected sealed override int MaxLifespan()

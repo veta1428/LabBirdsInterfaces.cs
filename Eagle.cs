@@ -8,19 +8,14 @@ namespace birds
 {
     internal sealed class Eagle : Birds, IFlyable
     {
-        public LOVE Relationships()
+        public override sealed LOVE Relationship()
         {
             return LOVE.POLY;
         }
 
-        public Eagle()
+        public Eagle(int age = 0): base (age)
         {
-            Age = 0;
-        }
 
-        public Eagle(int age = 0)
-        {
-            Age = age;
         }
 
         protected sealed override int MaxLifespan()

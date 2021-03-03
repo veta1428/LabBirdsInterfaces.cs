@@ -8,14 +8,14 @@ namespace birds
 {
     internal sealed class Hen : Birds
     {
-        public LOVE Relationships()
+        public override sealed LOVE Relationship()
         {
             return LOVE.POLY;
         }
 
-        public Hen(int age = 0)
+        public Hen(int age = 0): base(age)
         {
-            Age = age;
+
         }
 
         public Hen()
